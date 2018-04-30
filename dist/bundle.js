@@ -66,7 +66,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -79,6 +79,28 @@
 /***/ (function(module, exports) {
 
 eval("console.log('elson');\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/index2.js":
+/*!***********************!*\
+  !*** ./src/index2.js ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("console.log('zhang');\n\n//# sourceURL=webpack:///./src/index2.js?");
+
+/***/ }),
+
+/***/ 0:
+/*!********************************************!*\
+  !*** multi ./src/index.js ./src/index2.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("__webpack_require__(/*! ./src/index.js */\"./src/index.js\");\nmodule.exports = __webpack_require__(/*! ./src/index2.js */\"./src/index2.js\");\n\n\n//# sourceURL=webpack:///multi_./src/index.js_./src/index2.js?");
 
 /***/ })
 
