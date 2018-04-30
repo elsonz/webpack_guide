@@ -10,8 +10,24 @@ module.exports = {
     },
     output: {
         // filename: 'bundle.js', // 打包输出文件名:此时因为有多个chunk，因此不能只定义一个输出文件，否则报错
-        filename: '[name].js[query]', // 打包输出文件名：中括号+chunkname作为占位符，具体参考文档：https://doc.webpack-china.org/configuration/output#output-filename
+        filename: '[name].js', // 打包输出文件名：中括号+chunkname作为占位符，具体参考文档：https://doc.webpack-china.org/configuration/output#output-filename
         path: path.join(__dirname, './dist') // 打包输出路径（必须绝对路径，否则报错）
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'] // loader执行顺序：从右到左
+            },
+            {
+                test: /\.less$/,
+                use: [
+                    {loader: 'style-loader'},
+                    {loader: 'css-loader'},
+                    {loader: 'less-loader'}
+                ]
+            }
+        ]
     },
     plugins: [
         new htmlWebpackPlugin({
